@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
+    <meta name="keywords" content="读书笔记-C primer plus-数组和指针, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Hexo</title>
+    <title>读书笔记-C primer plus-数组和指针 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">读书笔记-C primer plus-数组和指针</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                <span class="chip bg-color">C语言</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -443,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-15
+                    2022-01-17
                 </div>
                 
 
@@ -464,19 +468,70 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <h1 id="数组和指针"><a href="#数组和指针" class="headerlink" title="数组和指针"></a>数组和指针</h1><p><em>标量变量</em> ：只存储单个值的变量。<br />与普通变量类似，在使用数组元素之前，一定一定要先给他们赋初值。</p>
+<hr>
+<p><em>注意    存储类别警告</em> ：对于一些其他存储类别的变量和数组，如果在声明时未初始化，编译器会自动把它们的值设置为0。#存储类别</p>
+<p>目前描述的变量属于自动存储类别</p>
+<hr>
+<ul>
+<li>初始化数组：<ol>
+<li>如果不初始化数组，数组元素和未初始化的普通变量一样，其中存储的都是垃圾值；</li>
+<li>如果部分初始化数组，剩余的元素就会被初始化为0；</li>
+<li>如果初始化列表的项数多余数组元素个数，编译器则会报错；</li>
+<li>最好是在声明数组时使用符号常量来表示数组的大小，这样做就能够确保整个程序中的数组大小始终一致。</li>
+</ol>
+</li>
+<li>指定初始化器（C99）：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int arr[10] = &#123; [5] = 211，985 &#125;;</span><br><span class="line">//把arr[5]初始化为211，arr[6]初始化为985，其他元素将会被赋值为0。</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>关于指定初始化器的两个特性：<br />1. 如果指定初始化器后面有更多的值，那么后面这些值将会被用于初始化指定元素后面的元素；<br />2. 如果再次初始化指定的元素，那么最后的初始化将会取代之前的初始化。</p>
+<ul>
+<li>给数组元素赋值：<ol>
+<li>C不允许把数组作为一个单元赋给另一个数组；</li>
+<li>除初始化外，不允许使用花括号列表的形式赋值。</li>
+</ol>
+</li>
+<li>多维数组：<ol>
+<li>在计算机内部，二维数组是先存储第一行的元素，然后顺序存储第二行的元素，以此类推；</li>
+<li>初始化二维数组，对于arr[5][12]，按照5个列表来进行初始化，如果第1个列表只有10个数，则只会初始化数组第1行的前10个元素，而最后两个元素会被初始化为0。如果某列表中的数值个数超出了数组每行的元素个数，则会出错，但是不影响其他行的初始化。</li>
+</ol>
+</li>
+<li>指针和数组：<ol>
+<li>数组名是数组首元素的地址；</li>
+<li>在C中，指针加1指的是增加一个存储单元（所指向类型的大小。eg.  short为2字节，double为8字节）</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a == &amp;a[0]; //a是一个数组，该表达式值为1</span><br><span class="line">a + 2 == &amp;a[2];  //相同的地址</span><br><span class="line">*(a + 2) == a[2];  //相同的值</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<ul>
+<li>函数、数组和指针：<ol>
+<li>定义的函数的形式参数是一个数组，那么在函数原型声明和函数定义头里可以用指针来代替这个数组，在这种情况下，数组和指针是可以通用的；</li>
+<li>数组名时该数组首元素的地址，作为实际参数的数组名要求形式参数是一个与之匹配的指针。在这种情况下，C会把int arr[]和int *arr解释成一样；</li>
+<li>在函数原型中，可以省略参数名；</li>
+<li>但是在函数定义中不能省略参数名。</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int sum ( int *arr , int n );</span><br><span class="line">int sum ( int * , int );</span><br><span class="line">int sum ( int arr[] , int n );  //调用函数时直接使用数组的名称</span><br><span class="line">int sum ( int [] , int );    //这四种原型是等价的</span><br><span class="line">int sum ( int *arr , int n )</span><br><span class="line">&#123;</span><br><span class="line">  //其他代码已省略</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int sum ( int arr[] , int n )</span><br><span class="line">&#123;</span><br><span class="line">  //其他代码已省略</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>指针表示法和数组表示法：<ol>
+<li>处理数组的函数实际上用指针作为参数；</li>
+<li>在C语言中，arr[i]和*(arr+i)是等价的。无论arr是数组名还是指针变量，这两个表达式都是可用的。但是，只有当arr是指针变量时，才能使用arr++这种表达式。</li>
+</ol>
+</li>
+<li>const和指针：<ol>
+<li>const int *p  = 非const数据地址；    ✔️<br>const int *p  = const数据地址；       ✔️         不能通过这种指针改变数据<br>普通指针       = const数据地址。        ✖️</li>
+<li>int * const p 该指针在声明并初始化一个指向的地址，定义后不可修改</li>
+<li>const int * const p 该指针既不能修改指向地址的值，也不能更改它的指向</li>
+</ol>
+</li>
+</ul>
 
                 
             </div>
@@ -503,7 +558,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://rezya9977.github.io/2022/01/15/hello-world/">https://rezya9977.github.io/2022/01/15/hello-world/</a>
+                    <a href="https://rezya9977.github.io/2022/01/17/2022-1-17%E6%95%B0%E7%BB%84%E5%92%8C%E6%8C%87%E9%92%88/">https://rezya9977.github.io/2022/01/17/2022-1-17%E6%95%B0%E7%BB%84%E5%92%8C%E6%8C%87%E9%92%88/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -540,7 +595,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/C%E8%AF%AD%E8%A8%80/">
+                                    <span class="chip bg-color">C语言</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -708,9 +767,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/01/17/2022-1-17%E6%95%B0%E7%BB%84%E5%92%8C%E6%8C%87%E9%92%88/">
                     <div class="card-image">
@@ -728,9 +788,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -739,6 +799,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -754,7 +815,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2022/01/15/hello-world/">
@@ -784,7 +845,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
